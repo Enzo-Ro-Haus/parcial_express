@@ -3,9 +3,9 @@ const express = require('express');
 const { body } = require('express-validator');
 const router = express.Router();
 
-router.get('/authors', authorControllers.getAllAuthors);
-router.get('/authors/:id', authorControllers.getAuthorById);
-router.post('/author',
+router.get('/', authorControllers.getAllAuthors);
+router.get('/:id', authorControllers.getAuthorById);
+router.post('/',
     [
         body('nombre').notEmpty().withMessage('El campo nombre es necesario'),
         body('fachaNacimiento').notEmpty().withMessage('El campo fecha de nacimiento es necesaria'),
@@ -13,7 +13,7 @@ router.post('/author',
     ],
      authorControllers.createAuthor);
 
-router.put('/authors/:id', authorControllers.updateAuthor);
-router.delete('/authors/:id', authorControllers.deleteAuthor);
+router.put('/:id', authorControllers.updateAuthor);
+router.delete('/:id', authorControllers.deleteAuthor);
 
 module.exports = router;

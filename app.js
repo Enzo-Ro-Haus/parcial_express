@@ -9,10 +9,12 @@ const authorRoutes = require('./src/routes/author');
 const app = express();
 dotenv.config();
 
-app.use(cors({origin: 'http:/localhost:'}));
 app.use(express.json());
 
-mongoose.connect(process.env.MONGO_DB)
+app.use('/books', bookRoutes);
+app.use('/authors', authorRoutes);
+
+mongoose.connect(process.env.MONGO_URI)
 .then(() => {
     console.log('Conectado a mongo db');
     app.listen(process.env.PORT, () => {
