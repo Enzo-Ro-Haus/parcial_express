@@ -14,10 +14,7 @@ const authorSchema = mongoose.Schema({
         type: String,
         required: true,
     },
-    libros: {
-        type: [mongoose.Schema.type.ObjectId, ref='libro'],
-        requiered: true,
-    }
+    libros: [{type: mongoose.Schema.Types.ObjectId, ref:'Book'}]
 });
 
 module.exports = mongoose.model('Author', authorSchema);

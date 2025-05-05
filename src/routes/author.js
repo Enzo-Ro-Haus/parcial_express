@@ -3,8 +3,8 @@ const express = require('express');
 const { body } = require('express-validator');
 const router = express.Router();
 
-router.getAllAuthor('/authors', authorControllers.getAllAuthors);
-router.getAuthorById('/authors/:id', authorControllers.getAuthorById);
+router.get('/authors', authorControllers.getAllAuthors);
+router.get('/authors/:id', authorControllers.getAuthorById);
 router.post('/author',
     [
         body('nombre').notEmpty().withMessage('El campo nombre es necesario'),

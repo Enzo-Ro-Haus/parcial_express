@@ -3,8 +3,8 @@ const express = require('express');
 const { body } = require('express-validator');
 const router = express.Router();
 
-router.getAllBooks('/books', bookControllers.getAllBook);
-router.getById('/books/:id', bookControllers.getBookById);
+router.get('/books', bookControllers.getAllBook);
+router.get('/books/:id', bookControllers.getBookById);
 router.post('/books',
     [
         body('titulo').notEmpty().withMessage('El campo titulo es necesario'),

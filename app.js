@@ -3,8 +3,8 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 
-const bookRoutes = require('./routes/book');
-const authorRoutes = require('./routes/author');
+const bookRoutes = require('./src/routes/book');
+const authorRoutes = require('./src/routes/author');
 
 const app = express();
 dotenv.config();
