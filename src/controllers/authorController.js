@@ -22,7 +22,7 @@ exports.createAuthor = async (req, res) => {
     res.status(201).json({message: 'Autor creado correctamente'});
 };
 
-exports.updateAutor = async (req, res) => {
+exports.updateAuthor = async (req, res) => {
     const autor = await Author.findById(req.params.id, req.body, {new: true}).populate(Book);
     res.json(autor);
 };
